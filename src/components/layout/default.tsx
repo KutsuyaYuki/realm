@@ -7,6 +7,7 @@ import ScrollProgress from "../custom/scroll-progress";
 import { createPortal } from "react-dom";
 import { useEffect, useState } from "react";
 import { useSSToggle } from "@/hooks/atoms";
+import TriangleBackground from "@/components/custom/triangleBackground";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const jetbrainsMono = JetBrains_Mono({
@@ -72,6 +73,7 @@ export default function DefaultLayout({
         transition={{ duration: 0.25, ease: "easeOut" }}
       >
         <ScrollerMotion disabled={!smoothScrolling}>
+          <TriangleBackground />
           {mounted && createPortal(<ScrollProgress />, document.body)}
           {children}
           <Footer />
